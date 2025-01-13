@@ -1,0 +1,122 @@
+
+Q.1 Write a java program to get a number from the user and print\
+ the whather it is true or false.
+
+ Ans : 
+ import java.util.*;
+
+public class JavaConditional{
+
+    public static void main(String args[]){
+        Scanner inp = new Scanner(System.in);
+        
+        int num = inp.nextInt();
+
+     if(num > 0){
+        System.out.println("Number is positive");
+     }else if(num == 0){
+        System.out.println("number is nor positive or negative");
+     }else{
+      System.out.println("Number is Negative");  
+     }
+
+    }
+}
+
+Q2. Finish the following code so that it prints You have a fever if your temperature is
+ above 100 and otherwise prints You don't have a fever.
+
+Ans : 
+ double temp = 103.5;
+
+      if(temp > 100.0){
+        System.out.println("You have Fever");
+      }else{
+        System.out.println("You don't have Fear");
+      }
+
+Q3. Write a Java program to input week number (1-7) and print 
+  day of week name using switch case.
+
+ans : 
+import java.util.*;
+
+public class JavaConditional{
+
+    public static void main(String args[]){
+        Scanner inp = new Scanner(System.in);
+        
+       int day = inp.nextInt();
+
+       switch(day){
+        case 1:
+            System.out.println("Monday");
+            break;
+        case 2:
+            System.out.println("Tuesday");
+            break;
+        case 3:
+            System.out.println("Wednesday");
+            break;
+        case 4:
+            System.out.println("Thursday");
+            break;
+        case 5:
+            System.out.println("Friday");
+            break;
+        case 6:
+            System.out.println("Saturday");
+            break;
+        case 7:
+            System.out.println("Sunday");
+            break;       
+        default:
+            System.out.println("Sorry ! there is no day available");
+            break;                     
+       }
+
+    }
+}
+
+Q 4. What will be the value of x & y in the following program :  
+
+public class Solution {
+    public static void main(String args []) {
+        int a = 63,b = 36 ; 
+        boolean x = (a<b) ? true : false;
+        int y = (a>b)? a:b;
+
+         System.out.println(x); //false
+        System.out.println(y);  //63
+        }
+    }
+
+Q 5. Write a Java program that takes a year from the user
+  and print whether that year is a leap year or not.
+
+Ans : 
+
+import java.util.*;
+
+public class JavaConditional{
+
+    public static void main(String args[]){
+        Scanner inp = new Scanner(System.in);
+        
+     int year = inp.nextInt();
+    
+    if(year % 400 == 0){
+        System.out.println("Leap year");
+    }else if(year % 100 == 0){
+        System.out.println("not a Leap year");
+    }else if(year % 4 == 0){
+        System.out.println("Leap year");
+    }else{
+        System.out.println("not a Leap year");
+    }
+
+    }
+}
+
+// if year is divisble by 400 & 4 then it is leap year .
+  if it is not then it is divisble by 100 then not a leap year.

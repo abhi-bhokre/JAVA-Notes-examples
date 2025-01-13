@@ -1,0 +1,395 @@
+
+* Loops (Flow Control) *
+
+1.Loops : 
+
+- in Programming language loops are used for the repeation of same thing , that are executed many times.
+-loops are used for the code execution for many times in small lines of code.
+- in Loops there are 2 types of loops are available :
+ 
+ 1.Entry Controlled loop : 
+     - For Loop 
+     - while Loop
+
+ 2. Exit Controlled Loop : 
+    - Do while Loop
+
+2. While Loop :  
+
+- while loop are Entry Controlled loop .
+- in while loop first we have to initialize  a value outside the while loop ,  
+then put the condition for that intialized value in the while loop condition and after 
+that while loop inside block give a statement that we want to execute.
+- then last increament/decreament the value inside after statement of while loop.
+-then the code will be executed , whenever the last condition is true , if condition becomes
+false then the loop will be terminate.
+
+Syntax : 
+
+while(Condition){
+    //statement
+}
+
+ex.
+
+        int count = 0;
+        while(count < 100){
+         System.out.println("Hello Java");
+         count++;
+        }
+        
+3. print numbers from 1 to 10 (while loop) 
+
+ans : 
+
+import java.util.*;
+
+public class JavaLoops{
+    public static void main(String args[]){
+        Scanner inp = new Scanner(System.in);
+       
+       int count = 1;
+       while(count <=10){
+        System.out.println(count);
+        count++;
+       }
+    }
+}
+
+4. print numbers from to n user input  :
+
+Ans : 
+
+
+import java.util.*;
+
+public class JavaLoops{
+    public static void main(String args[]){
+        Scanner inp = new Scanner(System.in);
+        
+        int n = inp.nextInt();
+
+       int count = 1;
+       while(count <= n ){
+        System.out.println(count);
+        count++;
+       }
+    }
+}
+
+5 . print sum of first n natural numbers 
+
+code :
+
+
+import java.util.*;
+
+public class JavaLoops{
+    public static void main(String args[]){
+        Scanner inp = new Scanner(System.in);
+        
+        int n = inp.nextInt();
+        int sum = 0;
+        int i = 1;
+
+        while(i <= n){
+            sum += i;
+            i++;
+        }
+
+        System.out.println("Sum is : "  + sum);
+    }
+}
+ 
+6. for loop :  
+
+- for loop is entry controlled loop. that are also used for the execute a block of code 
+ multiple times . it is similiar to while loop.
+- but the main difference is that the syntax of for loop is different from the while loop.
+- in the syntax of for loop we can write or initialize ; condition ; increament/decreament will 
+ written on the same line of code.
+- for loop are easy to use than while & do-while loop.
+-for loop is most popular & most used loop.
+
+syntax : 
+ for(initialization ; condition ; updation){
+    //statement
+ }
+
+ex.
+
+import java.util.*;
+
+public class JavaLoops{
+    public static void main(String args[]){
+        Scanner inp = new Scanner(System.in);
+        
+        for(int i=1; i<=5; i++){
+            System.out.println("hello world");
+        }
+       
+        }
+}
+ 
+7 . print square pattern : 
+ 
+ * * * *
+ * * * *
+ * * * *
+ * * * *
+code : 
+
+
+import java.util.*;
+
+public class JavaLoops{
+    public static void main(String args[]){
+        Scanner inp = new Scanner(System.in);
+        
+        for(int i=1; i<=4; i++){
+            System.out.println("* * * *");
+        }
+       
+        }
+}
+ 
+8. print reverse of a number : 
+
+num = 135204
+
+code : 
+
+import java.util.*;
+
+public class JavaLoops{
+    public static void main(String args[]){
+        Scanner inp = new Scanner(System.in);
+        
+        int num = 135204;
+
+        while(num > 0){
+            int lastdigit = num % 10;
+            System.out.print(lastdigit);
+            num = num/10;
+        }
+        System.out.println();
+}
+}
+ 
+9. reverse the given number :  
+ 
+code : 
+
+import java.util.*;
+
+public class JavaLoops{
+    public static void main(String args[]){
+        Scanner inp = new Scanner(System.in);
+        
+       int n = 135204;
+       int rev = 0;
+      
+      while(n > 0){
+        int lastdigit = n% 10;
+        rev = (rev * 10) + lastdigit;
+        n = n/10;
+       
+      }
+      System.out.print(rev);
+}
+}
+
+ 10. do-while loop : 
+
+- the do-while loop is a exit controlled loop. it is similiar to while loop.
+- but there are some difference that do-while loop checks the condition first 
+and print it atleast 1 time , if condition is false then also check atleast 1 time 
+execute.
+- and do while condition we write at the last of do while loop , 
+ means first it check statement and later check the condition.
+- it is not most used.
+
+Syntax : 
+
+do{
+    statement
+    ++;
+}while(condition);
+
+ex.
+
+int i =1;
+do {
+    System.out.println("hello");
+    i++;
+}(i<=5);
+
+11. Break statement : 
+
+- the Break statement are used for the exit from the loop .
+- if the condition becomes true in the code if we given then the break statement
+   will terminate the whole loop ,  if we get the condition  true that we want.
+- and other part will not run.   
+
+ex. 
+
+import java.util.*;
+
+public class JavaLoops{
+    public static void main(String args[]){
+        Scanner inp = new Scanner(System.in);
+       
+       for(int i = 1 ; i<5 ; i++){
+        if(i==3){  
+            break;
+        }
+        System.out.println(i);
+       }
+}
+}
+
+ 
+12. Question - break statement : 
+
+keep entering numbers till user enters a multiple of 10.
+
+code : 
+
+import java.util.*;
+
+public class JavaLoops{
+    public static void main(String args[]){
+        Scanner inp = new Scanner(System.in);
+       
+       do{
+         System.out.println("enter a number : ");
+         int n = inp.nextInt();
+         if(n % 10 == 0){
+            break;
+         }
+         System.out.println(n);
+       }while(true);
+}
+}
+ 
+13. continue statement : 
+
+- the continue statement will used for skip an itteration.
+if our condition becomes true there the only that particular condition will 
+be left from use and other all conditions will be executed using continue.
+
+ex . 
+int i=1;
+while(i<=5){
+    if(i == 3){
+        continue;
+    }
+    System.out.println(i);
+}
+
+14. Question - continue keyword 
+
+Display all numbers entered by user except multiples of 10.
+
+code : 
+
+
+import java.util.*;
+
+public class JavaLoops{
+    public static void main(String args[]){
+        Scanner inp = new Scanner(System.in);
+       
+       do{
+         System.out.println("enter a number : ");
+         int n = inp.nextInt();
+         if(n % 10 == 0){
+            continue;
+         }
+         System.out.println(n);
+       }while(true);
+}
+}
+ 
+
+
+15. check if a number is prime or not: 
+
+prime numbers are that only come in their own table and 1 table .
+ex. 2, 3 , 5 , 7 , 11 , 13 , 17 etc.
+and all other numbers are the composite numbers.
+ex.  , 4 ,6 , 8 etc.
+
+code : 
+
+
+
+import java.util.*;
+
+public class JavaLoops{
+    public static void main(String args[]){
+        Scanner inp = new Scanner(System.in);
+
+       int n = inp.nextInt();
+      
+     
+     if(n == 2){
+        System.out.println(n + "N is prime");
+     }else{
+       boolean isPrime = true;
+       for(int i= 2; i<=n-1; i++){
+      
+       if(n % i == 0){
+        isPrime = false;
+       }
+      }
+
+      if(isPrime == true){
+        System.out.println(n + " is prime");
+      }else{
+        System.out.println("N is not prime");
+      }
+     }
+      
+      
+    }
+}
+ 
+ solution 2 : 
+
+ 
+import java.util.*;
+
+public class JavaLoops{
+    public static void main(String args[]){
+        Scanner inp = new Scanner(System.in);
+
+       int n = inp.nextInt();
+      
+     
+     if(n == 2){
+        System.out.println(n + "N is prime");
+     }else{
+       boolean isPrime = true;
+       for(int i= 2; i<=Math.sqrt(n); i++){
+      
+       if(n % i == 0){
+        isPrime = false;
+       }
+      }
+
+      if(isPrime == true){
+        System.out.println(n + " is prime");
+      }else{
+        System.out.println("N is not prime");
+      }
+     }
+      
+      
+    }
+}
+ 
+
+
+
+

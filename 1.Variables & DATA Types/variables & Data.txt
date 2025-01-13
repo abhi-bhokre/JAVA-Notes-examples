@@ -1,0 +1,300 @@
+
+1. Creating a Java File : 
+
+step 1: Crate a folder And give the name that you want.
+step 2: after go to vs code and open the folder.
+step 3: later Create a file name "User.java" using the .java extension .
+step 4: java file will be created. 
+
+2.Boilerplate code : 
+
+public class JavaBasics{
+    public static void main(String args[]){
+     
+    }
+}
+
+Note : class name should be same as file name .
+
+3. Output In Java : 
+
+- Using (System.out.print()) statement we can get the output of program.
+
+following is output Code : 
+
+ System.out.print("Hello Abhi !");  
+
+ Note : System's First letter will be the Capital "S" otherwise It will throw an 
+        error.
+
+-** to print the Output in Next line We will use the "println" instead of print.
+
+code : 
+      System.out.println("Hello Abhi !");
+      System.out.println("Hello Abhi !");
+      System.out.println("Hello Abhi !");  
+        
+- or we can use the "\n" (BackSlash n) for Next line  
+
+code :
+     System.out.println("Hello Abhi !\n");
+     System.out.println("Hello Abhi !");
+
+
+4. Print a Pattern : 
+
+given Pattern : 
+               * * * *
+               * * *
+               * *
+               *
+
+code : 
+    public class JavaBasics{
+    public static void main(String args[]){
+       System.out.println("* * * *");
+       System.out.println("* * *");
+       System.out.println("* *");
+       System.out.println("*");
+    }
+}             
+
+5. Variables in Java : 
+
+- Variable is the Name of memory location or storage Area that are used to store the values.
+  inside the variables.
+ - Variables Value can be Changed anytime .
+
+ we can declare the variables like this : 
+
+    a = 10, b = 20;
+or  name = "Abhi";
+
+following is basic code to print the varible value : 
+
+       int a = 10;
+       String name = "Abhi";
+       System.out.println(a);
+       System.out.println(name);
+
+6. Data Types In java : 
+
+DataTypes are the types of the data that can be helped for the store the values of variables
+which are number or charcters and many more, what type of data we can store inside that
+variable . ex , integer , character , string etc.
+
+** There Are two Types of Data Types Are Available : 
+
+1. Primitive DataType : 
+  
+  -Primitive DataTypes are already created/exist  inside the library of java , only when writing a varible 
+  we have to just declare before the varible name. like int a= 10;
+
+There are 8 Types of Primitive DataTypes that are following : 
+
+1. byte : size of byte = 1 byte.
+ - byte can be used to store the byte of value.
+ ex. byte b=8;
+     System.out.println(b);
+
+2. short : size of short = 2 byte.
+   - we can store the short number .
+   ex. short n = 233;
+       System.out.println(n);
+
+3. char : size of char = 2 byte.
+   - char datatype can be store the only single character .
+   ex. char ch = "A";
+   System.out.println(ch);
+
+4. boolean : size of boolean = 1 byte.
+    - boolean can store the only true or false value that are used for check condition.
+    ex. boolean var = true;
+        System.out.println(var);
+
+5. int :  size of int = 4 byte.
+     -  to store the whole value we can use the int datatype.
+     ex . int a = 9;
+          System.out.println(a);
+ 
+6. long : size of long = 8 byte.
+      to store the big values of integer we can use the long datatype.
+     ex. long int a = 299298;
+          System.out.println(a);
+
+7. float : size of float = 4 byte.
+   - to store the Decimal values float will be used.
+   ex. float circle = 3.14;
+       System.out.println(circle);
+
+8. double : size of double  = 8 byte
+    - to store the big Decimal values double datatype can be used.
+    ex. double float c = 2344.44444423244;
+       System.out.println(c);
+
+2. Non-Primitive DataType : 
+   
+   - Non-Primitive DataTypes are that can be created by the user upon the need of users.
+    user create the Non-Primitive DataTypes.
+
+1.string
+2. Array
+3.class
+4.object
+5.interface
+
+7. Sum of A & B : 
+
+- following is Addition of A & B varible :
+
+public class JavaBasics{
+    public static void main(String args[]){
+      int a = 10 , b = 20;
+      int Sum = a + b;
+      System.out.println(Sum);
+    }
+}
+
+8. Comments in Java : 
+
+- Comments are used for the write something about on the code for the information
+  and cannot be printed on output , that are written in Comments .
+
+  - used to understand of code .
+
+-in Java There are 2 types of methods Are available to give the commenent : 
+
+1 . single Line Comment : represented by "//" double forward slash.
+
+- used for only single Line .
+ex : // sum of 2 numbers.
+
+2 . MultiLine Comments  :  represented by "/* */"  used forward slash and astericks and close them.
+
+- we can write the multiple lines in multiline commenents.
+
+ex. /* hello this is 
+      multiline Comment
+      in Java */
+
+9. Input in Java : 
+
+- to get input in java We use the (Scanner) Object , and create a Object name .
+
+- to use Scanner object for input , we have to use the following import package : 
+
+   import java.util.*;
+
+following are the input type functions in java :    
+
+1. next
+2. nextLine - for spaces
+3. nextInt - for integer
+4. nextByte - for bytes
+5. nextFloat - for float
+6. nextDouble - for double value
+7. nextBoolean - for boolean 
+8. nextShort - for short value
+9. nextLong - for long 
+
+following is code to get input in java :  
+
+
+  Scanner inp = new Scanner(System.in);
+
+    String A = inp.nextLine();
+
+    System.out.println(A);
+
+10 . sum of a & B (from user input) : 
+
+ Scanner inp = new Scanner(System.in);
+
+    int A = inp.nextInt();
+    int B = inp.nextInt();
+
+    int sum = A + B;
+
+    System.out.println("Sum of A & B = " + sum);
+ 
+11 . product Of A & B : (multiplication)
+
+    Scanner inp = new Scanner(System.in);
+
+    int a = inp.nextInt();
+    int b = inp.nextInt();
+
+    int mul = a * b ;
+
+    System.out.println("multiplication of a & b = " + mul);
+
+12. Area of circle : 
+
+    Scanner inp = new Scanner(System.in);
+    
+    float r = inp.nextFloat();
+
+    float area = 3.14f * r * r;
+
+    System.out.println("Area of radius = " + area); 
+
+13. Type conversion : 
+
+- type conversion is the type of converting the varible dataType into  another dataType.
+but it is only used when the destination type will be smaller type than  source type .
+
+- in simple words int value can be converted in long datatype .
+ but long dataType can't be converted into int dataType beacause of size.
+
+conversion happens When : 
+
+1. type compitible 
+2. destination type > source type
+
+byte->short->int->float->long->doubles
+
+- it also known as lossy/implicit conversion.
+
+-following is ex. code : 
+
+ Scanner inp = new Scanner(System.in);
+    
+    float number = inp.nextInt();
+    System.out.println(number);
+
+14. Type Casting : 
+
+   - type Casting is the way user can convert the value forcefully from big dataType
+     to smalldatatype . 
+   - but it has an disadvantage of losing the some of data.
+
+   following is code of type Casting :
+
+       float num = 99.0000f;
+    int number = (int) num;
+    System.out.println(number);
+
+15 . Type promotion in Expressions :   
+
+1. java automatically promotes each byte , short , or char operand to int 
+   when evaluating an Expression.
+2. if one operand is long , float or double the whole Expression is 
+   promoted to long , float or double respectively.   
+
+   code : 
+
+      byte b = 5;
+    byte c = (byte) (b * 3);
+
+    System.out.println(c);   
+
+16. How does Java code run : 
+
+
+ source code -> compiler ->  Byte code -> java virtual machine -> Native Code
+   .java                       .class           (JVM) 
+
+
+   following 2 steps will work for run the code :
+   1.compilation 
+   2. Execution

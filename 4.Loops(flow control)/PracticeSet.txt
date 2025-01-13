@@ -1,0 +1,142 @@
+Q 1. How many times 'Hello' is printed?
+
+
+import java.util.*;
+
+public class JavaLoops{
+    public static void main(String args[]){
+        Scanner inp = new Scanner(System.in);
+       int i;
+     for( i = 0; i<5; i++){
+        System.out.println("hello");
+        i+= 2;
+     }
+        
+}
+}
+
+ans : Hello will printed 2 times.
+ 
+
+Q 2. Write a program that reads a set of integers , and then prints
+ the sum of the even and odd integers.
+
+ ans : 
+
+ 
+import java.util.*;
+
+public class JavaLoops{
+    public static void main(String args[]){
+        Scanner inp = new Scanner(System.in);
+       
+     System.out.println("Enter the no of total inputs:  ");
+    int n = inp.nextInt();
+
+    int evenSum = 0;
+    int oddSum = 0;
+
+    while(n > 0){
+        int currSum = inp.nextInt();
+
+        if(currSum % 2 == 0){
+         evenSum = evenSum + currSum;
+        }else{
+         oddSum = oddSum + currSum;
+        }
+        n--;
+    }
+
+    System.out.println("sum of even no is : " + evenSum);
+    System.out.println("sum of odd no is : " + oddSum);    
+     
+}
+}
+ 
+Q 3. Write a program to find the factorial of any number entered by the user.
+
+ans : 
+
+import java.util.*;
+
+public class JavaLoops{
+    public static void main(String args[]){
+        Scanner inp = new Scanner(System.in);
+       
+     System.out.println("Enter the no of total inputs:  ");
+     int n = inp.nextInt();
+     int fact = 1;
+
+      for(int i =1; i<= n ; i++){
+        
+        fact = fact * i;
+      } 
+      System.out.println(fact);
+     
+}
+}
+ 
+Q 4 . Write a program to print the multiplication table of a number N ,
+      entered by the user. 
+
+Ans : 
+
+
+import java.util.*;
+
+public class JavaLoops{
+    public static void main(String args[]){
+        Scanner inp = new Scanner(System.in);
+       
+     System.out.println("Enter the no of total inputs:  ");
+     int n = inp.nextInt();
+     int multi = 0;
+     
+
+      for(int i =1 ; i<= 10; i++){
+         multi = n * i;
+        System.out.println( n + " * " + i + " = "  + multi);
+      } 
+     
+     
+}
+}
+ 
+Q. 5  check the code and solve the problem.
+
+code : 
+
+
+import java.util.*;
+
+public class JavaLoops{
+    public static void main(String args[]){
+        Scanner inp = new Scanner(System.in);
+       
+     for(int i = 1; i<=10; i++){
+        System.out.println("i = " + i);
+     }
+     
+     System.out.println(" value of i = " + i);
+     
+}
+}
+
+ans : it give error beacause i is not declared on the global scope , 
+it is inside of the for scope . so the error will be occur.
+
+public class JavaLoops{
+    public static void main(String args[]){
+        Scanner inp = new Scanner(System.in);
+       int i;
+
+     for( i = 1; i<=10; i++){
+        System.out.println("i = " + i);
+     }
+     
+     System.out.println(" value of i = " + i);
+     
+}
+}
+
+this will print 1 to 5 value and last print 6.

@@ -1,0 +1,221 @@
+* Operators in java *
+
+- symbols that tell compiler to perform some operations.
+
+ex. sum = a + b
+
+1. Types of operators :
+
+-following are some types of operators in java :
+
+ 1. Arithmetic operators(binary/unary)
+ 2. Realational operators
+ 3. Logical operators
+ 4. Bitwise operators
+ 5. Assignment operators
+
+
+
+2. Arithmetic Operators : 
+
+- Arithmetic operators are of 2 Types :
+     
+     1. Binary : + - * / %
+     2. unary : ++ --
+
+- Arithmetic operators are used to perform mathmatical operations like 
+  add , sub , div , and more  between the two operands.    
+
+following code describe the Binary opertors code :
+
+      int a = 10;
+      int b = 5;
+
+      System.out.println("Add = " + (a+b));
+      System.out.println("sub = " + (a-b));
+      System.out.println("Multiply = " + (a*b));
+      System.out.println("divison = " + (a/b));
+      System.out.println("remainder = " + (a%b));
+
+
+3. Unary Operators : 
+
+   - unary operator need only a single value to perform the operation.
+   - unary operators are of 2 types that are ++(increament) &
+    --(decreament).
+   
+   1. increament opertor : (++)
+ 
+    -increament operator are used for the increase the value by 1. 
+      a= a + 1 instead of we can write using increament operator a++. 
+
+    - in increament operator there are of 2 types :
+    that are 1. pre-increament (before) 2. post-increament (after)
+    1. pre increament : the pre increament will change the value first ,
+                        and then use. (++a)
+    2. post increament : the post increament will use the value first and change the 
+                         value later . (a++)
+
+       following is ex. of pre increament
+      int a = 10;
+      int b = ++a;
+
+      System.out.println(a);  //11  
+      System.out.println(b);  //11
+     
+      following is ex. of post increament :
+
+      int a = 10;
+      int b = a++;
+
+      System.out.println(a); //11   
+      System.out.println(b); //10
+
+      2. Decreament Operator : 
+         
+         -decreament operator are used for the decrease the value by 1. 
+         a= a - 1 instead of we can write using decreament operator a--.
+
+       - Decreament operator have the same of 2 types :
+
+       1. pre decreament : the pre decreament will change the value first ,
+                        and then use. (--a)
+
+       2. post decreament : the post decreament will use the value first and change the 
+                         value later . (a--)
+
+       following is ex. of pre decreament
+      int a = 10;
+      int b = --a;
+
+      System.out.println(a);  //9
+      System.out.println(b);  //9
+     
+      following is ex. of post increament :
+
+      int a = 10;
+      int b = a--;
+
+      System.out.println(a); //9  
+      System.out.println(b); //10
+
+
+4. Realational operators : 
+
+ - Realational operators are used for the check the realtion between the
+   2 operators.
+
+   -following are some realtion operator are below :
+
+   1. == (eqaul to ) -> check the value is equal or not.
+     ex. int a = 10;
+      int b = 10;
+
+      System.out.println(a==b);  
+
+   2. != (not equal to) -> check the unquality .
+    
+    ex.int a = 10;
+       int b = 5;
+
+      System.out.println(a!=b);   
+
+    3. > (greater than) ->   check value is greater or not.
+
+    ex.int a = 10;
+      int b = 5;
+
+      System.out.println(a>b);  
+
+     4. < (less than) -> check value is less or not.
+
+     ex.int a = 10;
+      int b = 5;
+
+      System.out.println(a<b);   
+
+      5. >= (greater than or equal to) -> check the value is greater than or eqaul.
+        ex. 
+         int a = 5;
+         int b = 5;
+
+      System.out.println(a>=b); 
+
+      6. <= (less than or eqaul to) -> check the value is less than or equal to.
+      ex.int a = 5;
+      int b = 5;
+
+      System.out.println(a<=b);    
+
+5. Logical Operators : 
+ 
+ -Logical operators are used for the logic betwn 2 or 3 statements .
+ -There are 3 Types of Logical operators are available : 
+
+ 1. Logical AND (&&) : 
+   - in logical AND (&&) operator 2 or more statements are checked if all conditions are true ,
+      then ans will be True.
+
+      ex. System.out.println((3>2) && (5>0));// true
+
+ 2. Logical OR (||) :
+   
+   - in logical NOT (||) operator 2 or more are checked and atleast 1 condition will be true then 
+       the ans will be the true. or if all statements are false then ans will be the false.
+
+       ex.System.out.println((3>2) || (5<0));//true
+
+ 3. Logical Not (!) : 
+
+   - in logical NOT (!) operator the value will be check the condition if condition is true then give ans false 
+    or if statement will be false then give the true. (it will give opposite of statement).
+
+    ex.System.out.println(!(5 > 0)); // false
+
+
+6. Assignment operators :   
+
+- Assignment operators are used for the assign the value of right hand side to left hanf side .
+  A = 5.
+- used with (=) Assignment operator .
+
+following are some Assignment operators :
+
+1. = (assign) : 
+    -used to assign the value of rhs to lhs .
+    ex . A = 5 . //value will be the assign 5 to A.
+
+2. +=  :
+
+  ex .  int a = 5;
+      a += 5;
+
+      System.out.println(a);  //10
+
+3. -= : 
+
+ex.  int a = 5;
+      a -= 5;
+
+      System.out.println(a); //0
+
+4. *= : 
+
+ex.int a = 5;
+      a *= 5;
+
+      System.out.println(a); // 25
+
+5. /= : 
+
+ex.int a = 5;
+      a /= 5;
+
+      System.out.println(a); // 1
+
+6. %= : 
+
+ex. int a = 5;
+      a %= 5;
+
+      System.out.println(a); //0
