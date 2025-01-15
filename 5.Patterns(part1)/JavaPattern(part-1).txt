@@ -1,0 +1,371 @@
+* Pattern Part-1 *
+
+1. Nested Loops : 
+
+- Nested loops are nothing but the loops inside loops , that are used for the 
+  print the Patterns in different different types.
+
+* there are 3 Steps we have to follow To Print Any type of pattern *
+
+Step 1 :  Outer Loop -
+
+- first we have to check the how many lines or rows we have to print in outer Loop.
+ex : i <= 4; (Outer Loop)
+
+Step 2 : Inner Loop -
+
+- later in inner loop , we have to check how many number of times we have to print the 
+ pattern.
+
+ex : J<=i;
+
+Step 3 : What to print ?
+
+- in this step , we have to print what type of pattern that we want to print .
+ex. "*" , 123 etc.
+
+2.Star Pattern : 
+
+*
+* *
+* * *
+* * * * 
+
+code : 
+
+
+import java.util.*;
+
+public class javaPattern{
+
+    public static void main(String args[]){
+
+        Scanner inp = new Scanner(System.in);
+
+        for(int i=1 ; i<=4 ; i++){ //Outer Loop
+
+            for(int j=1 ; j<=i; j++){  //inner Loop
+
+                System.out.print("*");
+            }
+            System.out.println(); // For Next Line
+        }
+    }
+}
+
+* Let's Break down The code for this pattern *
+
+                   *
+                   * *
+                   * * *
+                   * * * * 
+
+as we said  ,  we have to check the first outer loops line or row , in the above pattern 
+
+step 1:
+in above pattern there are 4 lines of rows are available.
+then first line of outer loop will be like : 
+
+- for(int i=1 ; i<=4 ; i++) //Outer loop line
+
+- we get the (i = 1 to i < = 4 ) then i++ for increase the value next time.
+
+step 2:
+after checking this we have to go through the next loop that is 
+inner Loop .
+
+- in this loop we will check how many times we have to print the columns .
+- like this above pattern there are Printing the "*" as per the line number 
+ then we will use as line like (j<=i).
+- means it will print like how many lines will be there then
+   line will print like i.
+
+following is line : for(int j=1 ; j<=i; j++) // inner loop line
+
+Step 3 : lets we get on the step 3 , in this step the above conditions is true 
+        then the "*" will print .
+
+After condition become false then  we will go to next line .
+and this will go to in loop whenever condition of i will became 5.
+after i = 5 became , condition will be false and our loop will be terminated
+and we have the pattern that we want like above .
+
+Note : this is just explaination , we have run the DRY code on the paper with the help 
+      pen.
+
+
+3. Print Inverted Star Pattern : 
+
+* * * *
+* * * 
+* * 
+* 
+
+code : 
+
+
+import java.util.*;
+
+public class javaPattern{
+
+    public static void main(String args[]){
+
+        Scanner inp = new Scanner(System.in);
+
+       int n = 4;
+       for(int i=1 ; i<=n; i++){  // outer loop 
+
+        for(int j=1; j<=n-i+1 ; j++){ //inner loop (1<=4-i+1)
+
+            System.out.print("*");
+        }
+        System.out.println();
+       }
+    }
+}
+
+
+4.Half Pyarmid pattern : 
+
+1
+12
+123
+1234
+
+code : 
+
+import java.util.*;
+
+public class javaPattern{
+
+    public static void main(String args[]){
+
+        Scanner inp = new Scanner(System.in);
+       
+       int n = 4;
+       for(int i =1 ; i<= n ; i++){
+
+        for(int j = 1; j<=i; j++){
+            System.out.print(j);
+        }
+         System.out.println();
+       }
+
+    }
+}
+
+
+5. Character Pattern : 
+
+A
+B C
+D E F
+G H I J 
+
+
+code : 
+
+import java.util.*;
+
+public class javaPattern{
+
+    public static void main(String args[]){
+
+        Scanner inp = new Scanner(System.in);
+       
+       int n = 4;
+       char ch = 'A';
+
+       for(int i=1 ; i<= n ; i++){
+        for(int j=1; j<=i; j++){
+            System.out.print(ch);
+            ch++;
+        }
+        System.out.println();
+       }
+
+    }
+}
+
+Note : these char values Are be increased or ch++ By the Ascii values. (convert into 65=A , 66=B , 67=C )
+
+means The Captital 'A' value in Ascii is 65. and after capital values of (A B C D)
+  to (z) are increased by 1. 
+
+
+6. Number Half Pyarmid :
+
+1
+2 3
+4 5 6
+7 8 9 10
+
+code : 
+
+ 
+import java.util.*;
+
+public class javaPattern{
+
+    public static void main(String args[]){
+
+        Scanner inp = new Scanner(System.in);
+       
+        int n = 4;
+       int m = 3;
+       int num = 1;
+      for(int i = 1; i<=n ; i++){
+
+        for(int j=1 ; j<=i; j++){
+
+         System.out.print(num);
+            num++;
+        }
+        System.out.println(" ");
+      }
+      
+    }
+}
+
+7. Square Pattern :
+
+* * * * *
+* * * * *
+* * * * *
+* * * * *
+
+code : 
+
+
+import java.util.*;
+
+public class javaPattern{
+
+    public static void main(String args[]){
+
+        Scanner inp = new Scanner(System.in);
+       
+       int n = 4;
+       int m = 5;
+
+      for(int i = 1; i<=n ; i++){
+
+        for(int j=1 ; j<=m; j++){
+
+           System.out.print("*");
+        }
+        System.out.println(" ");
+      }
+
+    }
+}
+
+
+8. print inverted Star Pattern (second Approch) :
+
+* * * *
+* * * 
+* * 
+* 
+
+code : 
+
+
+import java.util.*;
+
+public class javaPattern{
+
+    public static void main(String args[]){
+
+        Scanner inp = new Scanner(System.in);
+       
+       int n = 4;
+
+      for(int i = n; i>=1; i--){
+
+        for(int j=1 ; j<=i; j++){
+
+           System.out.print("*");
+        }
+        System.out.println(" ");
+      }
+
+    }
+}
+
+
+9 . 
+
+*
+**
+***
+****
+*****
+****
+***
+**
+*
+
+
+code :
+
+import java.util.*;
+
+public class javaPattern{
+
+    public static void main(String args[]){
+
+        Scanner inp = new Scanner(System.in);
+       
+       int n = 5;
+
+      for(int i=1; i<=n; i++){
+        for(int j=1; j<=i; j++){
+            System.out.print("*");
+        }
+        System.out.println();
+      }
+      for(int i=1; i<=n-1; i++){
+        for(int j=1; j< n-i+1; j++){
+            System.out.print("*");
+        }
+        System.out.println();
+      }
+
+    }
+}
+
+10 . Hollow Rectangle : 
+
+* * * * *
+*       *
+*       *
+*       *
+* * * * *
+
+code : 
+
+
+import java.util.*;
+
+public class javaPattern{
+
+    public static void main(String args[]){
+
+        Scanner inp = new Scanner(System.in);
+       
+       int n = 5;
+       int m = 5;
+      for(int i=1; i<=n; i++){
+        for(int j=1; j<=m ; j++){
+            if(i==1 || i==n || j==1 || j==m){
+                System.out.print("*");
+            }else{
+                System.out.print(" ");
+            }
+        }
+        System.out.println();
+      }
+
+    }
+}
