@@ -1,0 +1,618 @@
+* /      Functions or Methods    */
+
+1 . intro to functions : 
+
+- function is a block of code ,  that are used to  works repeatedly 
+ as no. of times. or we can say we can reuse that function many times.
+ after calling that particular function. using like this in our code will be
+ reusable many times & our time will be saved.
+
+ Methods : 
+
+ - methods are nothing but those functions that are written inside the Class 
+  is called as Methods.
+
+
+2. Syntax  - function code Demo 
+
+returnType name(){
+    //statement
+    return statement;
+}
+
+code : 
+
+
+import java.util.*;
+
+public class JavaFunctions{
+
+    public static void printHelloWorld(){  //function with void dataType
+        System.out.println("Hello World");
+        System.out.println("Hello World");
+    }
+
+    public static void main(String args[]){
+
+        printHelloWorld();    //function call
+    }
+}
+
+- BreakDown of Code :
+
+   void : Means Null / nothing to return by the function.
+
+  - in the above code , we created the a function named printHelloWorld() ,
+   and give the datatype void. inside that function we write the 2 statement that prints
+   Hello world and return nothing after calling the function.
+
+ - next in our main function , we have called the printHelloWorld() function ,
+   after excuting the function we will get the output on the console 2 times Hello world.
+
+- we can call that function many time that we want in our main function , that are the code reusabilty
+  to our printHelloWorld() function.
+
+
+3. Syntax with parameters : 
+
+returnType name (type parameter1 , type parameter2){
+    //body 
+    return statement;
+}
+
+parameters : parameters are the values/input given by the function call time , 
+             we write the parameters in our functions paranthesis() inside , and 
+             get the value from to that parameters at the main function inside 
+             calling the function we give also values.
+
+code : 
+
+
+import java.util.*;
+
+public class JavaFunctions{
+
+   public static int Addsum(int num1 , int num2){  //function Addsum with return type int
+      
+      int sum = num1 + num2;      //num1 + num2 addition stored in sum variable
+
+      return sum;                //sum will be return to Addsum function
+   }
+
+    public static void main(String args[]){
+      
+      Scanner inp = new Scanner(System.in);
+
+      int a = inp.nextInt();            // get 2 values to a and b by user input
+      int b = inp.nextInt();
+
+      int sum = Addsum(a , b);         // calling the Addsum function and storing the value of addition in sum variable
+
+      System.out.println("Sum is :" + sum);     //printing the value of sum 
+        
+    }
+}
+
+
+let's BreakDown the code :
+
+- in above code , we create a function Addsum named with the return type is int , means we have to return any number 
+ or int value to that function and inside function first we give the two parameters num1 & num2 and later inside function
+  we do the addition of these 2  values . and stored inside the sum varible and return the sum with the int dataType.
+
+  - next in main function , we get the 2 values by userinput a & b , and created a int sum variable and called Addsum
+    and inside that Addsum we give the 2 values a and b for the addition to above function Addsum. after the value of addition 
+    will return to the main functions sum variable inside. later we print the sum varible and get the value of addition of that 
+    a and b.
+
+- we can call that function many times giving different different values.
+
+4. Parameters V/S Arguments : 
+
+
+ public static int Addsum(int num1 , int num2){  // parameters or formal parameters
+      int sum = num1 + num2;
+
+      return sum;
+   }
+
+parameters : are the values that are the inside function that we created.
+            parameters are data definations.
+
+
+    public static void main(String args[]){
+      
+      Scanner inp = new Scanner(System.in);
+
+      int a = inp.nextInt();
+      int b = inp.nextInt();
+
+      int sum = Addsum(a , b);    //Arguments or actual arguments
+
+      System.out.println("Sum is :" + sum);
+        
+    }
+
+Arguments : are the actual values that are passed from the main function to the 
+            other function. 
+           - arguments are come with call time.
+
+
+
+5. What Happens in memory ? (call Stack) :     
+
+- stack : stack is datastructure , that store memory likes one above one plate.
+
+callstack : 
+   - call stack are stored the memory 1 above 1 of the main function later above the other function
+     and store the memory that required inside it.
+   - after work done of that functions memory of those function will be 
+     realseased automatically by callstack.
+
+
+6. Call by value in Java : 
+
+- java always call by value , means it creates a copy of that varible & 
+  give to function only copy never give the original value .
+- after that functions work be done that copy will be removed or realsead 
+  from memory.
+- and original value will be remain same it cannot be changed.
+
+let's take an ex. of swap 2 numbers : 
+
+code : 
+
+
+import java.util.*;
+
+public class JavaFunctions{
+
+    public static void swap(int a , int b){   //call by value
+        int temp = a;
+        a = b;
+        b = temp;
+
+        System.out.println("Value of a :" + a);  //a=5
+        System.out.println("Value of b :" + b);  //b=10
+    }
+
+    public static void main(String args[]){
+      
+      Scanner inp = new Scanner(System.in);
+
+      int a = 10 , b = 5;
+      System.out.println("Value of a :" + a);  //a=10
+      System.out.println("Value of b :" + b);  //b=5s
+
+      swap(a , b);  //only copy of values passed to swap function.
+                    //original value will be remain same
+    }
+}
+
+- only the swap function inside values will be changed , not in the main function
+ that values remained same.
+
+7. Product a & b : (multiplication)
+
+code : 
+
+import java.util.*;
+
+public class JavaFunctions{
+
+    public static int product(int n1 , int n2){
+        int multi = n1 * n2;
+
+        return multi;
+    }
+
+    public static void main(String args[]){
+      
+      Scanner inp = new Scanner(System.in);
+
+      int a = 10 , b = 5;
+      
+     int multiplication = product(a , b);
+
+     System.out.println("Multiplication is :" + multiplication);
+        
+    }
+}
+
+8. Find factorial : 
+
+code : 
+import java.util.*;
+
+public class JavaFunctions{
+
+    public static int factorial(int n){
+       int fact = 1;
+       for(int i=1; i<=n; i++){
+         fact = fact * i;
+       }
+
+       return fact;
+    }
+
+    public static void main(String args[]){
+      
+      Scanner inp = new Scanner(System.in);
+
+      System.out.println("Factorial of n :" + factorial(5));
+        
+    }
+}
+
+9. find binomial coefficient : 
+
+formula : 
+
+  n 
+   C      =    n! / r! (n-r)!
+     r
+
+code : 
+import java.util.*;
+
+public class JavaFunctions{
+
+    public static int factorial(int n){
+       int fact = 1;
+       for(int i=1; i<=n; i++){
+         fact = fact * i;
+       }
+
+       return fact;
+    }
+
+    public static int bionomial(int n , int r){
+
+        int n_fact = factorial(n);
+        int r_fact = factorial(r);
+        int nr_fact = factorial(n-r);
+
+       int  bioCoefficeint = n_fact / (r_fact * nr_fact);
+
+       return bioCoefficeint;
+
+    }
+
+    public static void main(String args[]){
+      
+      Scanner inp = new Scanner(System.in);
+
+      int a = 5 , b = 2;
+
+      int binomialCoeffieccent = bionomial(a , b);
+
+      System.out.println(binomialCoeffieccent);
+        
+    }
+}
+
+10 . inBuilt V/S UserDefined Methods :
+
+inBuilt methods : 
+
+- inBuilt methods are created already by the inBuilt library.
+ ex .
+ Scanner method : give us the input.
+Math method  : 
+    like power , sqrt , max function are already built inside Math package.
+
+- UserDefined methods : 
+
+  - it is created by the user like above examples are 
+    factorial , sum of 2 numbers , swap , binomialCoeffieccent etc.
+    created by the user.   
+
+
+11. function OverLoading :
+
+- multiple functions with the same name but different parameters.
+
+-means we can write multiple functions in the class as same name , but we have to give
+the different parameters to that functions. as per calling by parameters the functions will 
+be automatically called which types of parameters give to that function on calling time.
+
+12 . function OverLoading using Parameters : 
+
+- in function OverLoading , the return type will be never checked there only check the 
+  how many parameters are given by the user and then function will be automatically called.
+
+code : 
+
+  
+import java.util.*;
+
+public class JavaFunctions{
+
+   public static int sum(int a , int b){ // for 2 parameters
+      return a + b;
+   }
+
+   public static int sum(int a , int b , int c){ // for 3 parameters
+     return a + b + c;
+   }
+      
+    
+    public static void main(String args[]){
+      
+      Scanner inp = new Scanner(System.in);
+
+     System.out.println(sum(5 , 9));     // call 2 parameters function
+      System.out.println(sum(5 , 9 , 8));  //call 3 parameters function
+  
+    }
+}
+
+-in above code , we made 2 same name functions sum , but we gave 2 different parameters 
+ to that function at the calling time if we give 3 arguments then the 2nd function will be 
+ called.
+
+
+13. function OverLoading using dataTypes : 
+
+- using dataTypes function OverLoading means we create same name functions ,  but the parameters 
+  datatypes of the function are different , we give like 1 function int dataType , or other function float/double 
+  datatype.
+
+code : 
+
+
+public class JavaFunctions{
+
+   public static int sum(int a , int b){  //using int dataType
+      return a + b;
+   }
+
+    public static float sum(float a , float b){  // Using Float dataType
+      return a + b;
+    }
+      
+    
+    public static void main(String args[]){
+      
+      Scanner inp = new Scanner(System.in);
+
+     System.out.println(sum(8 , 7));    //calling int dataType
+      System.out.println(sum(5.6f , 8.8f)); //calling float dataType
+  
+    }
+}
+
+14. check if a number is prime or not : 
+
+code : 
+
+
+public class JavaFunctions{
+
+   
+   public static boolean isPrime(int n){
+    
+    boolean isPrime = true;
+    for(int i=2 ; i<=Math.sqrt(n) ; i++){  
+      if(n % i == 0){
+        isPrime = false;
+      }
+
+    }
+
+    return isPrime;
+    
+   }
+      
+    
+    public static void main(String args[]){
+      
+      Scanner inp = new Scanner(System.in);
+
+     int n = inp.nextInt();
+
+      boolean prime = isPrime(n);
+
+     if(prime == true){
+      System.out.println("Number is prime");
+     }else{
+      System.out.println("Number is Not prime");
+     }
+  
+    }
+}
+
+15. print prime numbers in range : 
+
+ex. 2 to n 
+
+code : 
+
+import java.util.*;
+
+public class JavaFunctions{
+
+   
+   public static boolean isPrime(int n){
+    
+    boolean isPrime = true;
+    for(int i=2 ; i<=Math.sqrt(n) ; i++){
+      if(n % i == 0){
+        isPrime = false;
+      }
+
+    }
+    return isPrime;
+   }
+
+   public static void primeInRange(int n){  
+      for(int i=2 ; i<=n ; i++){
+        if(isPrime(i)){          //check prime range 2 to n & print prime
+          System.out.print(i + " ");
+        }
+      }
+   }
+      
+    
+    public static void main(String args[]){
+      
+      Scanner inp = new Scanner(System.in);
+
+     int n = inp.nextInt();
+
+      primeInRange(n);
+  
+    }
+}
+
+16. Convert from Binary To Decimal : 
+
+- Binary numbers in computer science are (0 , 1) from these numbers our whole computer run.
+- whatever we write in computer are converted into Binary numbers that are 0 , 1. 
+
+- to convert from binary to decimal , we have to calculate binary numbers every last digit 
+  with 2 Power 0 and it increase power to every value from last like 0 , 1 , 2 ,3.
+
+  ex . n = 101 like  last 1 power is 2 power 0 , and next number power is 2 power 1 and first numbers power is 2 power 2.
+       after calculating power we have to addition of all power 
+       then the decimal value we get.
+
+       101 = (2(2) * 1)  + (2(1) * 0) +  (2(0) * 1) = 4 +  0 + 1 = 5
+
+17 . code binary to decimal : 
+
+code : 
+
+import java.util.*;
+
+public class JavaFunctions{
+
+   
+   public static void binToDec(int binNum){
+     int pow = 0;
+     int dec = 0;
+     
+
+     while(binNum > 0){
+      int lastdigit = binNum % 10;
+      dec = dec + (lastdigit * (int)Math.pow(2 , pow)); // 
+
+      pow++;
+
+      binNum = binNum / 10;
+     }
+
+     System.out.println("Decimal of num is : " + dec);
+
+
+   }
+      
+    
+    public static void main(String args[]){
+      
+      Scanner inp = new Scanner(System.in);
+
+      binToDec(1011);
+  
+    }
+}
+
+18 . Convert from Decimal to Binary : 
+
+- to convert decimal to binary , we have to calculate the every last numbers remainder by 2 , 
+  what remainder will remain we have to store like table below : 
+
+   n = 7 
+
+   2/7 = 6  -> remainder = 1
+   2/3 = 2 -> remainder = 1   
+   2/1  = 1 -> remainder = 1
+
+   order from bottom to up :  111  is in binary is 7
+
+   Note : calculate every next number by which number will be the come after divide 
+    like ex. 2/7 = 2 * 3 = 6 , so next number of calculation is 3 , follow on this process 
+    untill numbers not end.
+
+19. Code Decimal to binary :     
+
+code : 
+
+
+   
+ public static void binToDec(int n){
+  int pow = 0;
+  int binNum = 0;
+
+  while(n>0){
+    int rem = n % 2;
+
+    binNum = binNum + (rem * (int)Math.pow(10 , pow));
+
+    pow++;
+
+   n = n / 2;
+  }
+
+  System.out.println("Binary to Decimal is : " + binNum);
+
+ }
+      
+    
+    public static void main(String args[]){
+      
+      Scanner inp = new Scanner(System.in);
+
+    //  int n = inp.nextInt();
+     
+     binToDec(7);
+      
+  
+    }
+
+20. method/function scope : 
+
+-  method scope , means we only use the variable in that scope we write the varible.
+   like we get a ex. below : 
+
+   public static void sum(){
+    int a = 10 ;     // only valid in inside this scope/function.
+    System.out.println(a);
+   }
+
+   public static void main(){
+
+    System.out.println(a);  //not valid in any other scope were it is not declare.
+   
+   }
+
+
+- in above ex. we created a sum function were inside we declare a varible name and print it.
+  it will print after function call  , but we print the same name variable in our main
+  function but it will give us error beacause that variables scope is only inside the sum function.
+
+- only giving values by parameters will be valid in function in other.
+
+
+21. Block Scope : 
+
+- block scope only valid in that {} curly braces inside ,  means that block scope . 
+
+code :
+
+   public static void main(String args[]){ //Main block
+      
+      Scanner inp = new Scanner(System.in);
+
+      int p = 10;
+
+      {
+        int a = 10;    // only print in this block scope
+        System.out.println(a);  
+         System.out.println(p);  // it will print beacause its block start from main function.
+      }
+
+      System.out.println(a); //not printed
+      System.out.println(p);
+
+    }

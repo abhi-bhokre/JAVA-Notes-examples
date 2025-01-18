@@ -1,0 +1,147 @@
+/ * functions practice Set * /
+
+Q 1. Write a java program method to compute the average of three numbers.
+
+code : 
+
+import java.util.*;
+
+public class JavaFunctions{
+
+   
+   public static void Average(int a , int b , int c){
+
+    int average = (a+b+c) / 3;
+
+    System.out.println(" Average of 3 Numbers is : " + average);
+
+   }
+      
+    
+    public static void main(String args[]){
+      
+      Scanner inp = new Scanner(System.in);
+
+      // int n = inp.nextInt();
+      
+      Average(10 , 20 , 30);
+      
+    }
+}
+
+Q 2. Write a method named isEven that Accepts an int argumnet. the method 
+     should return true if the argumnet is even , or false .
+
+code : 
+
+import java.util.*;
+
+public class JavaFunctions{
+
+   
+  public static boolean isEven(int n){
+     
+     boolean isEven = true;
+
+     if(n % 2 != 0){
+      isEven = false;
+     }
+
+     return isEven;
+  }
+      
+    
+    public static void main(String args[]){
+      
+      Scanner inp = new Scanner(System.in);
+
+      int n = inp.nextInt();
+     
+     if(isEven(n)){
+      System.out.println("Number is even");
+    }else{
+      System.out.println("Number is ODD");
+    }
+     
+    }
+}
+
+Q 3. Write a java program to check if a number is a palindrome in java ?
+
+palindrome no. are : 121 , 454
+
+code : 
+
+import java.util.*;
+
+public class JavaFunctions{
+
+   
+   public static int palindrome(int n){
+    
+    int  num = 0;
+
+    while(n>0){
+     int lD = n % 10;
+     num = num * 10  + lD;
+     
+     n = n/10;
+    }
+
+    return num;
+
+   }
+ 
+      
+    
+    public static void main(String args[]){
+      
+      Scanner inp = new Scanner(System.in);
+
+      int n = inp.nextInt();
+     
+      int number = palindrome(n);
+
+      if(number == n){
+        System.out.println("Number is palindrome");
+      }else{
+        System.out.println("Number is Not a palindrome");
+      }
+     
+    }
+}
+
+Q 4. Write a java Method to compute the sum of the digits in an integer.
+
+code : 
+
+import java.util.*;
+
+public class JavaFunctions{
+
+   
+  public static int Sum(int n){
+    int sum = 0;
+
+    while(n> 0){
+      int lD = n % 10;
+      sum = sum + lD;
+      n= n/10;
+    }
+
+    return sum;
+  }
+ 
+      
+    
+    public static void main(String args[]){
+      
+      Scanner inp = new Scanner(System.in);
+
+      int n = inp.nextInt();
+
+     int num = Sum(n);
+
+     System.out.println("Sum of N Digit is : " + num);
+
+}

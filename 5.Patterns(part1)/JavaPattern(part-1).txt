@@ -212,7 +212,6 @@ public class javaPattern{
         Scanner inp = new Scanner(System.in);
        
         int n = 4;
-       int m = 3;
        int num = 1;
       for(int i = 1; i<=n ; i++){
 
