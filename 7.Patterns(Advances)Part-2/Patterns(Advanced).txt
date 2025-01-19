@@ -1,0 +1,656 @@
+/ * Advanced Patterns * /
+
+1. Hollow rectangle Pattern : 
+
+* * * * *
+*       *
+*       *
+* * * * *
+
+code : 
+import java.util.*;
+
+public class JavaPatterns{
+
+    public static void Pattern(int row , int col){
+
+        for(int i=1; i<=row; i++){
+            for(int  j=1;j<=col;j++){
+                if(i==1 || i== row || j==1 || j==col){
+                    System.out.print("*");
+                }else{
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+
+    public static void main(String[] args){
+
+    Scanner inp = new Scanner(System.in);
+
+     Pattern(4 , 5);
+
+    }
+}
+
+-BreakDown : 
+
+-in the above code , we have to print the hollow pattern , so we have to check some things
+ that our hollow pattern is in the border or box like , so we have to print only 
+ the border ,  rows and cols only.
+
+- so we have to use the logic like we have to check the 4 conditions that only prints the border side of whole 
+  box . so we use below logic :
+
+  if(i==1 || i==row || j==1 || j==col){
+    System.out.print("*");
+  }else{
+     System.out.print(" ");
+  } 
+
+- so in above lines , we give the 4 conditions if any conditions will be satisfied then the 
+  * will be printed or if the condition will became false so the (" ") space will be printed.
+  and our hollow pattern will be created.
+
+Note : These is only explanation you have to check by  own self , on the paper pen using above code.  
+
+
+2. Inverted & Rotated Half-Pyramid : 
+
+      *
+    * * 
+  * * *
+* * * *
+ 
+code :
+
+import java.util.*;
+
+public class JavaPatterns{
+
+    public static void Inverted_rotated_half_pyramid(int n){
+     
+     for(int i=1; i<=n; i++){  //for rows
+
+        for(int j=1; j<=n-i; j++){  //for spaces
+            System.out.print(" ");   
+        }
+
+        for(int j=1; j<=i; j++){  //for (*)
+
+             System.out.print("*");
+        }
+         System.out.println();
+     }
+        
+    }
+
+
+    public static void main(String[] args){
+
+    Scanner inp = new Scanner(System.in);
+
+     Inverted_rotated_half_pyramid(4);
+
+    }
+}
+
+
+3. Inverted & Rotated Half-Pyramid with numbers : 
+
+12345
+1234
+123
+12
+1
+
+code : 
+
+import java.util.*;
+
+public class JavaPatterns{
+
+  static void Inverted_Half_Pyramid_Numbers(int n){
+        
+        for(int i=1; i<=n;i++){         //Approach-1
+            for(int j=1; j<=n-i+1; j++){
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+
+
+
+        //   for(int i = n; i>=1; i--){  //Approach-2
+        //    for(int j = 1; j<=i;j++){
+        //     System.out.print(j);
+        //    }
+        //    for(int j=1;j<=n-1; j++){
+        //     System.out.print(" ");
+        //    }
+        //    System.out.println();
+        // }
+    }
+
+
+    public static void main(String[] args){
+
+    Scanner inp = new Scanner(System.in);
+
+     Inverted_Half_Pyramid_Numbers(5);
+
+    }
+}
+
+Note : to solve in above code there are 2 Approaches , we can use any one that we want to print the 
+      pattern.
+
+
+4. Floyd's Triangle :
+
+1
+2 3
+4 5 6
+7 8 9 10
+11 12 13 14 15
+
+code : 
+
+import java.util.*;
+
+public class JavaPatterns{
+
+    public static void FloydsTriangle(int n){
+   int num = 1; 
+    for(int i=1;i<=n;i++){
+        for(int j=1; j<=i; j++){
+            System.out.print(num + " ");
+            num++;
+        }
+        System.out.println();
+    }
+      
+    }
+    public static void main(String[] args){
+
+    Scanner inp = new Scanner(System.in);
+      
+      FloydsTriangle(5);
+
+    }
+}
+
+5. 0-1 Triangle Pattern : 
+
+1
+0 1
+1 0 1
+0 1 0 1
+1 0 1 0 1
+
+code : 
+
+import java.util.*;
+
+public class JavaPatterns{
+
+    public static void Triangle_0_1(int n){
+   
+     for(int i=1; i<=n; i++){
+
+        for(int j=1; j<=i; j++){
+
+            if((i+j) % 2 == 0){
+                System.out.print(1 + " ");
+            }else{
+                 System.out.print(0 + " ");
+            }
+        }
+        System.out.println();
+     }
+      
+    }
+    public static void main(String[] args){
+
+    Scanner inp = new Scanner(System.in);
+      
+      Triangle_0_1(5);
+
+    }
+}
+
+
+6.Butterfly Pattern : 
+
+*             *
+* *         * *
+* * *     * * *
+* * * * * * * *  //first half
+* * * * * * * *  //second half
+* * *     * * *
+* *         * *
+*             *
+
+code : 
+
+import java.util.*;
+
+public class JavaPatterns{
+
+    public static void ButterflyPattern(int n){
+   
+
+    //for 1st half
+     for(int i=1;i<=n;i++){     //for first half
+        for(int j=1; j<=i; j++){
+            System.out.print("*");
+        }
+        for(int j=1; j<=2*(n-i); j++){
+            System.out.print(" ");
+        }
+
+        for(int j=1; j<=i; j++){
+            System.out.print("*");
+        }
+
+      System.out.println();
+     }
+
+     //2nd half
+     for(int i=n;i>=1; i--){  //for second half
+
+        for(int j=1; j<=i; j++){
+            System.out.print("*");
+        }
+        for(int j=1; j<=2*(n-i); j++){
+            System.out.print(" ");
+        }
+
+        for(int j=1; j<=i; j++){
+            System.out.print("*");
+        }
+
+         System.out.println("");
+     }
+
+    }
+    public static void main(String[] args){
+
+    Scanner inp = new Scanner(System.in);
+      
+      ButterflyPattern(4);
+
+    }
+}
+
+
+7. Solid Rhombus : 
+
+
+
+        * * * * *
+      * * * * *
+    * * * * *
+  * * * * *
+* * * * *
+
+
+code : 
+
+import java.util.*;
+
+public class JavaPatterns{
+
+    public static void SolidRrhombus(int n){
+   
+    for(int i=1; i<=n; i++){
+
+        for(int j=1; j<=n-i; j++){ //for spaces
+            System.out.print(" ");
+        }
+        for(int j=1; j<=n; j++){  //for stars
+            System.out.print("* ");
+        }
+
+        System.out.println("");
+    }
+
+    }
+    public static void main(String[] args){
+
+    Scanner inp = new Scanner(System.in);
+      
+      SolidRrhombus(5);
+
+    }
+}
+
+8. Hollow Rhombus Pattern : 
+
+    * * * * *
+   *       *
+  *       *
+ *       *
+* * * * *
+
+code :
+
+import java.util.*;
+
+public class JavaPatterns{
+
+    public static void HollowRhombus(int n){
+   
+      for(int i = 1; i<=n; i++){  //for outer loop
+
+        for(int j=1; j<=n-i; j++){  //for spaces
+             System.out.print(" ");
+        }
+        for(int j=1; j<=n; j++){   
+            if(i==1 || i==n || j==1 || j==n){  //for star
+                System.out.print("*");
+            }else{                      //for space
+                 System.out.print(" ");
+            }
+        }
+        System.out.println();
+      }
+
+    }
+    public static void main(String[] args){
+
+    Scanner inp = new Scanner(System.in);
+      
+      HollowRhombus(5);
+
+    }
+}
+
+9. Diamond Pattern : 
+
+      *
+     * *
+    * * *
+   * * * *
+  * * * * *
+* * * * * * *  //first half
+* * * * * * *  //second half
+  * * * * *
+    * * *
+     * *
+      *
+
+code : 
+
+//1st Approach :
+
+import java.util.*;
+
+public class JavaPatterns{
+
+    public static void DiamonPattern(int n){
+   
+      for(int i=1;i<=n; i++){   //for 1st half
+
+        for(int j=1; j<=n-i; j++){
+            System.out.print(" ");
+        }
+
+        for(int j=1; j<=(2*i)-1; j++){
+            System.out.print("*");
+        }
+
+       
+
+        System.out.println();
+       
+      }
+
+       for(int i=n;i>=1; i--){    //for 2nd half
+
+        for(int j=1; j<=n-i; j++){
+            System.out.print(" ");  //for spaces
+        }
+
+        for(int j=1; j<=(2*i)-1; j++){
+            System.out.print("*"); //for star
+        }
+
+      
+
+        System.out.println();
+      }
+      
+    }
+    public static void main(String[] args){
+
+    Scanner inp = new Scanner(System.in);
+      
+      DiamonPattern(5);
+
+    }
+}
+
+//2nd Approach :
+ 
+import java.util.*;
+
+public class JavaPatterns{
+
+    public static void DiamonPattern(int n){
+   
+      for(int i=1;i<=n; i++){   //for 1st half
+
+        for(int j=1; j<=n-i; j++){
+            System.out.print(" ");
+        }
+
+        for(int j=1; j<=i; j++){
+            System.out.print("*");
+        }
+
+        for(int j=1;j<i; j++){
+            System.out.print("*");
+        }
+
+        System.out.println();
+       
+      }
+
+       for(int i=n;i>=1; i--){    //for 2nd half
+
+        for(int j=1; j<=n-i; j++){
+            System.out.print(" ");  //for spaces
+        }
+
+        for(int j=1; j<=i; j++){
+            System.out.print("*"); //for star
+        }
+
+        for(int j=1;j<i; j++){
+            System.out.print("*");  //for star
+        }
+
+        System.out.println();
+      }
+      
+    }
+    public static void main(String[] args){
+
+    Scanner inp = new Scanner(System.in);
+      
+      DiamonPattern(5);
+
+    }
+}
+
+
+10. mirror Inverted_rotated_half_pyramid : 
+
+*****
+ ****
+  ***
+   **
+    *
+
+code : 
+
+import java.util.*;
+
+public class JavaPatterns{
+
+    public static void Pattern(int n){
+
+        
+      
+      for(int i=1; i<=n; i++){
+        int numspaces = i-1;
+        int spaces = n - numspaces;
+
+        for(int j=1; j<=numspaces; j++){
+            System.out.print(" ");
+        }
+
+        for(int j=1; j<=spaces; j++){
+             System.out.print("*");
+        }
+         System.out.println();
+      }
+    }
+    public static void main(String[] args){
+
+    Scanner inp = new Scanner(System.in);
+     
+     Pattern(5);
+     
+
+    }
+}
+
+
+11. Pattern : 
+
+                                *
+                        *               *
+                *               *               *
+        *               *               *              *
+*               *               *               *           *
+
+code : 
+
+import java.util.*;
+
+public class JavaPatterns{
+
+    public static void Pattern(int n){
+
+    for(int i=1;i<=n;i++){
+        int numspaces = n-i;
+        
+        for(int j=1;j<=numspaces; j++){
+            System.out.print("\t");
+        }
+
+        for(int j=1;j<=i;j++){
+            System.out.print("*\t\t");
+        }
+        System.out.println();
+    }
+      
+    }
+    public static void main(String[] args){
+
+    Scanner inp = new Scanner(System.in);
+      
+      Pattern(5);
+
+    }
+}
+
+
+12. Pattern : 
+
+                                1
+                        2               3
+                4               5               6
+        7               8               9               10
+11              12              13              14              15
+
+code : 
+
+import java.util.*;
+
+public class JavaPatterns{
+
+    public static void Pattern(int n){
+    int num =1;
+    for(int i=1;i<=n;i++){
+        int numspaces = n-i;
+        
+        for(int j=1;j<=numspaces; j++){
+            System.out.print("\t");
+        }
+
+        for(int j=1;j<=i;j++){
+            System.out.print(num + "\t\t");
+            num++;
+        }
+        System.out.println();
+    }
+      
+    }
+    public static void main(String[] args){
+
+    Scanner inp = new Scanner(System.in);
+      
+      Pattern(5);
+
+    }
+}
+
+
+13 . Triangle 121 :
+
+    1
+   121
+  12321
+ 1234321
+123454321
+
+code : 
+
+import java.util.*;
+
+public class JavaPatterns{
+
+    public static void Pattern(int n){
+
+        for(int i=1; i<=n; i++){
+           for(int j=1; j<=n-i; j++){
+             System.out.print(" ");
+           }
+
+           for(int j=1;j<=i;j++){
+            System.out.print(j);
+           }
+
+           for(int j=i-1; j>=1; j--){
+            System.out.print(j);
+           }
+
+           System.out.println();
+        }
+      
+    }
+    public static void main(String[] args){
+
+    Scanner inp = new Scanner(System.in);
+     
+     Pattern(5);
+     
+
+    }
+}
